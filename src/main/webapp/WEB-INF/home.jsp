@@ -10,5 +10,10 @@
 
 <h1>Welcome to Cole's Film Site</h1>
 
+<a href="nameForm.html">Get a Film Using it's ID</a><br/>
+<a href="abbrevForm.html">Get a Film Using a keyword</a><br/>
+
+
+
 </body>
 </html>
