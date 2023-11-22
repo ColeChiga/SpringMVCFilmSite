@@ -22,7 +22,7 @@ public class Film {
 	private List<Actor> actors;
 	
 	public Film(int filmId, String title, String desc, short releaseYear, int langId, int rentDur, double rate,
-			int length, double repCost, String rating, String features, List<Actor> actors, String lang) {
+			int length, double repCost, String rating, String features, /*List<Actor> actors,*/ String lang) {
 		this.filmId = filmId;
 		this.title = title;
 		this.desc = desc;
@@ -34,7 +34,7 @@ public class Film {
 		this.repCost = repCost;
 		this.rating = rating;
 		this.features = features;
-		this.actors = actors;
+//		this.actors = actors;
 		this.lang = lang;
 	}
 
