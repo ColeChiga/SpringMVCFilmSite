@@ -1,5 +1,6 @@
 package com.skilldistillery.film.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -18,7 +19,7 @@ public class Film {
 	private String rating;
 	private String features;
 	private String lang;
-	private List<Actor> actors;
+	private List<Actor> actors = new ArrayList<>();
 	private String category;
 	
 	public String getLang() {
@@ -47,6 +48,8 @@ public class Film {
 		this.lang = lang;
 		this.category = category;
 	}
+
+	
 
 	public int numOfActors(){
 		return actors.size();
