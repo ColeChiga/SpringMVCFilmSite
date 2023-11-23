@@ -18,6 +18,8 @@ public class Film {
 	private String rating;
 	private String features;
 	private String lang;
+	private List<Actor> actors;
+	private String category;
 	
 	public String getLang() {
 		return lang;
@@ -27,10 +29,9 @@ public class Film {
 		this.lang = lang;
 	}
 
-	private List<Actor> actors;
 	
 	public Film(int filmId, String title, String desc, short releaseYear, int langId, int rentDur, double rate,
-			int length, double repCost, String rating, String features, /*List<Actor> actors,*/ String lang) {
+			int length, double repCost, String rating, String features, List<Actor> actors, String lang, String category) {
 		this.filmId = filmId;
 		this.title = title;
 		this.desc = desc;
@@ -42,8 +43,9 @@ public class Film {
 		this.repCost = repCost;
 		this.rating = rating;
 		this.features = features;
-//		this.actors = actors;
+		this.actors = actors;
 		this.lang = lang;
+		this.category = category;
 	}
 
 	public int numOfActors(){
@@ -138,7 +140,7 @@ public class Film {
 		this.features = features;
 	}
 
-	public List<Actor> getActor() {
+	public List<Actor> getActors() {
 		return actors;
 	}
 
@@ -180,6 +182,14 @@ public class Film {
 						
 		return  String.format("|%-4d | %-20s | %-100s | %-4d |%-7d | %-9d | $%-5.2f | %-3d min |$%-8.2f | %-6s | %-60s| %-10s | %s | %n", filmId, title ,  desc, releaseYear, langId, rentDur, rate, length,
 				repCost, rating, features, lang, actors);
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 	
 	

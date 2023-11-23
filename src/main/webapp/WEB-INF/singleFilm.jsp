@@ -24,9 +24,20 @@
 				<li>Replacement: Cost ${film.repCost}</li>
 				<li>Rating: ${film.rate}</li>
 				<li>Features: ${film.features}</li>
+				<li>Category: ${film.category}</li>
+				<li>Actors:</li>
+				<ul>
+					<c:forEach items="${actors}" var="actor">
+						<li>${actor.firstName} ${actor.lastName}</li>
+					</c:forEach>
+				</ul>
+				
 				
 			</ul>
-			
+
+
+
+
 		</c:when>
 		<c:otherwise>
 			<p>No Films found</p>
