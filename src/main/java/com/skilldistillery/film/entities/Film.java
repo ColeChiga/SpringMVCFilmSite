@@ -19,6 +19,14 @@ public class Film {
 	private String features;
 	private String lang;
 	
+	public String getLang() {
+		return lang;
+	}
+
+	public void setLang(String lang) {
+		this.lang = lang;
+	}
+
 	private List<Actor> actors;
 	
 	public Film(int filmId, String title, String desc, short releaseYear, int langId, int rentDur, double rate,

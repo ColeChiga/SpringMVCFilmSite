@@ -12,7 +12,7 @@ import com.skilldistillery.film.data.*;
 public class FilmController {
 
 	@Autowired
-	private FilmDAO filmDao;
+	private FilmDAO filmDao = new FilmDaoJdbcImpl();
 
 	@RequestMapping(path = { "home.do", "/" })
 	public String goToHome() {
@@ -25,18 +25,20 @@ public class FilmController {
 	}
 	
 	@RequestMapping(path = "GetFilmData.do", method = RequestMethod.GET, params = "keyword")
-	public ModelAndView getStateByName(String keyword) {
+	public ModelAndView getFilmsByKeyword(String keyword) {
 		ModelAndView mv = new ModelAndView();
+		System.out.println("GetFilmsByKeyword accessed successfully: " + keyword);
 		mv.addObject("film", filmDao.searchByKeyword(keyword));
-		mv.setViewName("WEB-INF/result.jsp");
+		mv.addObject("keyword", keyword);
+		mv.setViewName("WEB-INF/films.jsp");
 		return mv;
 	}
 	
 	@RequestMapping(path = "GetFilmData.do", method = RequestMethod.GET, params = "id")
-	public ModelAndView getStateByName(int filmId) {
+	public ModelAndView getFilmByID(int id) {
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("film", filmDao.findById(filmId));
-		mv.setViewName("WEB-INF/result.jsp");
+		mv.addObject("film", filmDao.findById(id));
+		mv.setViewName("WEB-INF/singleFilm.jsp");
 		return mv;
 	}
 	
