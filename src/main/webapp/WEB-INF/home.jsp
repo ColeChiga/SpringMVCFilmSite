@@ -11,20 +11,18 @@
 	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
 	crossorigin="anonymous">
 </head>
-<body class="">
-	<div class="container-fluid name-plate row">
-		<div class="col-2"></div>
-		<h1 class="col text-center">Welcome to Cole's Film Site</h1>
-		<div class="col-2"></div>
+<body class="bg-secondary border border-primary-subtle">
+	<div class="container-fluid name-plate row bg-primary">
+		<h1 class="col text-center ">Welcome to Cole's Film Site</h1>
 	</div>
 
-	<form class="form-control btn-outline" action="GetFilmData.do"
+	<form class="form-control p-2 text-primary-emphasis btn-outline bg-primary border border-primary-subtle" action="GetFilmData.do"
 		method="GET">
 		Get a Film Using it's ID <input type="number" name="id" size="4"
-			min="1" max="1000" /> <input type="submit" value="Get Film Data" />
+			min="1"/> <input type="submit" value="Get Film Data" />
 	</form>
 
-	<form class="form-control btn-outline bg-primary-subtle border border-primary-subtle" action="GetFilmData.do"
+	<form class="form-control p-2 text-primary-emphasis btn-outline bg-primary border border-primary-subtle" action="GetFilmData.do"
 		method="GET">
 		Get a Film Using a Keyword <input type="text" name="keyword" /> <input
 			type="submit" value="Get Film Data" />

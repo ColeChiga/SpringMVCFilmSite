@@ -13,7 +13,13 @@
 	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
 	crossorigin="anonymous">
 </head>
-<body>
+<body class="bg-secondary border border-primary-subtle">
+	<div class="container-fluid name-plate row bg-primary">
+		<h1 class="col text-center ">Welcome to Cole's Film Site</h1>
+	</div>
+	<div class="row container-fluid row bg-primary-subtle border border-primary">
+	<div class="col-1"></div>
+	<div class="col">
 	<c:choose>
 		<c:when test="${! empty film}">
 
@@ -35,7 +41,7 @@
 				<li>Replacement: Cost $${film.repCost}</li>
 				<li>Actors:</li>
 				<ul>
-					<c:forEach items="${actors}" var="actor">
+					<c:forEach items="${film.actors}" var="actor">
 						<li>${actor.firstName}${actor.lastName}</li>
 					</c:forEach>
 				</ul>
@@ -53,6 +59,8 @@
 	</c:choose>
 	<br />
 	<a href="home.do">Return to home</a>
+	</div>
+	</div>
 
 
 	<script
